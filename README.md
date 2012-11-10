@@ -1,29 +1,13 @@
-Minimal configs and folders to start BEM project
+БЭМ-приложение на LeafLet и API 2GIS
 ================================================
 
-### Usage
+Пример простого картографического приложения, разработанного по БЭМ-методологии
 
-    › git clone git://github.com/bem/project-stub.git
-    › cd project-stub
-    › make
+БЭМ (аббревиатура от слов Блок-Элемент-Модификатор) — это способ разработки сайтов, позволяющих писать код, который легко подерживать и развивать.
+Подробнее на [bem.info](http://bem.info/).
 
-This will install localy all project's dependencies from npm and starts local `bem server`
-under HTTP port `8080`. So you could navigate to `http://localhost:8080/desktop.bundles/index/index.html`.
+API 2GIS - это набор простых инструментов для работы с картографическим и справочным контентом по более чем 180 городам России.
+Подробнее на [api.2gis.ru](http://api.2gis.ru/).
 
-Alternative to use `make`, you could install all dependencies by your self. To do so type `npm install` from the top
-of your working copy. After that your could start server:
-
-    › bem server
-
-    Navigate to `http://localhost:8080/desktop.bundles/index/index.html`
-
-**NOTE:** `bem` should be in your `PATH` environment variable. You could do this by adding this line to your user's
-`.profile` config:
-
-    exports PATH=./node_modules/.bin:$PATH
-
----
-
-BEM is abbreviation for Block-Element-Modifier. It's a way to write code which is easy to support and develop.
-
-For more info about BEM metodology see [bem.info](http://bem.info/).
+LeafLet - современная open-source JavaScript библиотека для разработки интерактивных карт.
+Подробнее на [leafletjs.com](http://leafletjs.com/).
