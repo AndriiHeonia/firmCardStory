@@ -34,7 +34,7 @@ BEM.decl ('i-geoclicker', {}, {
                 types: 'house,sight,station_platform'
            },
            dataType: 'jsonp',
-           success: this.showFirmcard,
+           success: this.showPopup,
            context: this
        });
     },
@@ -42,14 +42,12 @@ BEM.decl ('i-geoclicker', {}, {
     /**
      * @param {Object} data
      */
-    showFirmcard: function (data) {
-        var firmcard = new BEM.blocks['i-firmcard']();
+    showPopup: function (data) {
         if(data.result !== undefined) {
-            firmcard.setData(data.result[0]);
-            firmcard.toggleMod('state', 'collapsed');
+            var content = BEM.blocks['i-firmcard'].getFormattedText(data.result[0]);
             var popup = L.popup()
                 .setLatLng(this._lastLatLng)
-                .setContent(firmcard.getContent())
+                .setContent(content)
                 .openOn(this._map);
         }
     },
