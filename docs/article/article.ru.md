@@ -29,21 +29,23 @@
     npm install
 
 Выполним сборку проекта:
+
     $ ./node_modules/bem/bin/bem make
 
 Откроем в браузере файл desktop.bundles/index/index.html и посмотрим что страница собралась:
 ![Результат сборки](__images/article__images.build1.jpeg)
 
 Для разработки также удобно использовать [bem server](http://ru.bem.info/tools/bem/commands/), который будет выполнять сборку проекта по запросу от браузера, для этого нужно запустить его находясь в папке проекта:
+
     $ ./node_modules/bem/bin/bem server
 
-И зайти в браузере по адресу:
-http://localhost:8080/desktop.bundles/index
+И зайти в браузере по адресу: http://localhost:8080/desktop.bundles/index
 
 Макет страницы
 =============
 
 Изменим структуру страницы, заполнив файл desktop.bundles/index/index.bemjson.js следующим содержимым:
+
     ({
         block: 'b-page',
         title: 'Карта Новосибирска',
@@ -76,9 +78,11 @@ http://localhost:8080/desktop.bundles/index
 * Вернуть красиво сверстанный html-код карточки.
 
 Создадим этот блок на уровне переопределения desktop.blocks в технологии js:
+
     $ ./node_modules/bem/bin/bem create block i-firmcard -l desktop.blocks -T js
 
 Опишем файл desktop.blocks/i-firmcard/i-firmcard.js:
+
     BEM.decl ('i-firmcard', {}, {
         /**
         * @param {Object} data Firm info
@@ -104,9 +108,11 @@ http://localhost:8080/desktop.bundles/index
 Кроме самого блока карточки организации нам потребуется плагин к LeafLet-у, который будет отлавливать клик по карте и показывать карточку в балуне.
 
 Создадим его:
+
     $ ./node_modules/bem/bin/bem create block i-geoclicker -l desktop.blocks -T js
 
 И опишем поведение блока в файле desktop.blocks/i-geoclicker/i-geoclicker.js:
+
     BEM.decl ('i-geoclicker', {}, {
         /**
          * @type {L.Map}
@@ -181,9 +187,11 @@ http://localhost:8080/desktop.bundles/index
 =============
 
 Для того, чтобы карта отобразилась на странице, её нужно инициализировать. За инициализацию карты с написанным нами плагином будет отвечать блок b-map, создадим его:
+
     $ ./node_modules/bem/bin/bem create block b-map -l desktop.blocks -T js -T css -T bemhtml
 
 Опишем файл desktop.blocks/b-map/b-map.js:
+
     BEM.DOM.decl ('b-map',
     {
         onSetMod: {
@@ -198,11 +206,13 @@ http://localhost:8080/desktop.bundles/index
     {});
 
 Опишем файл desktop.blocks/b-map/b-map.css:
+
     .b-map {
         height: 600px;
     }
 
 И desktop.blocks/b-map/b-map.bemhtml:
+
     block b-map {
         js: true
     }
@@ -211,6 +221,7 @@ http://localhost:8080/desktop.bundles/index
 =============
 
 Конечно же, без самой библиотеки LeafLet карта не заработает, создадим блок библиотеки с соответствующими технологиями:
+
     $ ./node_modules/bem/bin/bem create block i-leaflet -l desktop.blocks -T js -T css -T ie.css
 
 Переписывать чужую библиотеку в БЭМ-терминах — не самая благодарная работа, потому просто скопируем содержимое [https://github.com/CloudMade/Leaflet/tree/master/dist](dist-файлов) в соответствующие файлы нашего блока, а картинки положим в папку i-leaflet/images.
@@ -224,11 +235,13 @@ http://localhost:8080/desktop.bundles/index
 Эти зависимости нужно где-то описать. Описание зависимостей производится с помощью файлов deps.js. Каждый блок должен сам знать, что ему нужно для полноценной работы.
 
 Файл зависимостей для блока b-page уже есть, создадим такие же файлы для других блоков:
+
     $ ./node_modules/bem/bin/bem create block i-firmcard -l desktop.blocks -T deps.js
     $ ./node_modules/bem/bin/bem create block i-geoclicker -l desktop.blocks -T deps.js
     $ ./node_modules/bem/bin/bem create block b-map -l desktop.blocks -T deps.js
 
 Заполним файл desktop.blocks/b-page/b-page.deps.js:
+
     ({
         mustDeps: [{
            block: 'i-bem',
@@ -238,6 +251,7 @@ http://localhost:8080/desktop.bundles/index
     })
 
 Заполним файл desktop.blocks/i-firmcard/i-firmcard.deps.js:
+
     ({
         mustDeps: [{
             "block": "i-bem",
@@ -246,6 +260,7 @@ http://localhost:8080/desktop.bundles/index
     })
 
 Заполним файл desktop.blocks/i-geoclicker/i-geoclicker.deps.js:
+
     ({
         mustDeps: [{
             "block": 'i-firmcard'
@@ -257,6 +272,7 @@ http://localhost:8080/desktop.bundles/index
     })
 
 Заполним файл desktop.blocks/b-map/b-map.deps.js:
+
     ({
         mustDeps: [{
             "block": 'i-leaflet'
@@ -275,6 +291,7 @@ http://localhost:8080/desktop.bundles/index
 =============
 
 Выполним сборку проекта:
+
     $ ./node_modules/bem/bin/bem make
 
 Откроем файл desktop.bundles/index/index.html в браузере и посмотрим на результат работы нашего приложения:
