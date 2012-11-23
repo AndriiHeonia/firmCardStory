@@ -1,6 +1,6 @@
 ({
     block: 'b-page',
-    title: 'Novosibirsk map',
+    title: 'Карта Новосибирска',
     head: [
         { elem: 'css', url: '_index.css' },
         { elem: 'css', url: '_index', ie: true },
