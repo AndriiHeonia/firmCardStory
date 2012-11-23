@@ -23,6 +23,7 @@
 =============
 
 Инициализируем заготовку проекта:
+
     git clone https://github.com/bem/project-stub.git firmCardStory
     cd firmCardStory
     npm install
