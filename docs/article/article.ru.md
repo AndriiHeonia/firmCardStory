@@ -309,7 +309,7 @@
              <span class="article-author__name">Андрей Геоня,
         </div>
         <div class="article-author__row">
-            Ведущий веб-разработчик, компания "2GIS"
+            Руководитель группы разработки, компания "2GIS"
         </div>
         <div class="article-author__row">
              <a class="article-author__social-icon b-link" target="_blank" href="http://twitter.com/AndreyGeonya">twitter.com/AndreyGeonya</a>
