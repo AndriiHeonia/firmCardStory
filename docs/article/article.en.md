@@ -225,7 +225,7 @@ Of course the map doesn't work without the [Leaflet.js](//github.com/Leaflet/Lea
 
     $ ./node_modules/bem/bin/bem create block i-leaflet -l desktop.blocks -T js -T css -T ie.css
 
-It's not the best idea to rewrite someone else's library, so let's just copy the content of [dist-files](https://github.com/Leaflet/Leaflet/tree/master/dist) to the corresponding files of our block.  And, we will place the pictures into the directory: `i-leaflet/images`.
+It's not the best idea to rewrite someone else's library, so let's just copy the content of [dist-files](https://github.com/CloudMade/Leaflet/tree/master/dist) to the corresponding files of our block.  And, we will place the pictures into the directory: `i-leaflet/images`.
 
 Dependencies
 =============
