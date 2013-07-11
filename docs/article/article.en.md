@@ -10,11 +10,11 @@ Programmer:
 * Make HTML page;
 * Use library [Leaflet](https://github.com/Leaflet/Leaflet);
 * Write reusable plugin for displaying the company's info-card;
-* Referring to the world "reusable" try to make it using BEM methodology;
+* Referring to the word "reusable" try to make it using BEM methodology;
 
 Reusable plugin?
 * Catch the click event on the map;
-* Sent a request to [geocoder 2GIS](http://api.2gis.ru/doc/geo/search/), it will return information about the company according to the coordinates;
+* Sent a request to [2GIS geocoder](http://api.2gis.ru/doc/geo/search/), it will return information about the company according to the coordinates;
 * Show a balloon with information.
 
 Let's call our project firmCardStory.
@@ -35,7 +35,7 @@ Complete the project's `Build Process`:
 Now we can browse to: [desktop.bundles/index/index.html](http://localhost:8080/desktop.bundles/index/index.html) and the page that was built:
 ![The build's result ](__images/article__images.build1.jpeg)
 
-It's very convenient to use [bem server](http://ru.bem.info/tools/bem/commands/) during the development phase of a project.  bem server will perform the necessary parts of the build process for each browser request received.  To run the bem server you need to execute it from it's path located within the project folder:
+It's very convenient to use [bem server](http://ru.bem.info/tools/bem/commands/) during the development phase of a project.  Bem server will perform the necessary parts of the build process for each browser request received.  To run the bem server you need to execute it from it's path located within the project folder:
 
     $ ./node_modules/bem/bin/bem server
 
@@ -106,7 +106,7 @@ In this case, from a simple helper block, that returns only some simply-formated
 Block i-geoclicker
 =============
 
-Besides the company's card block itself we will need a plugin for LeafLet-у. The plugin will capture click on the map and show the company card in a balloon.
+Besides the company's card block itself we will need a plugin for Leaflet. The plugin will capture click on the map and show the company card in a balloon.
 
 Let's create it:
 
@@ -187,7 +187,7 @@ As we can see, the block is quite simple, and consists of only 3 methods:
 Block b-map
 =============
 
-For the map to show-up on the page, it first has to be initiated. The block `b-map` is responsible for initializing the map with our plugin that we wrote above, let's crate this block in three files:
+For the map to show-up on the page, it first has to be initiated. The block `b-map` is responsible for initializing the map with our plugin that we wrote above, let's create this block in three files:
 
     $ ./node_modules/bem/bin/bem create block b-map -l desktop.blocks -T js -T css -T bemhtml
 
@@ -207,6 +207,7 @@ Paste the following code into the file `desktop.blocks/b-map/b-map.js`:
     {});
 
 Then, paste the following code into the `filedesktop.blocks/b-map/b-map.css`:
+
     .b-map {
         height: 600px;
     }
@@ -220,11 +221,11 @@ Lastly, paste the following code into the file `desktop.blocks/b-map/b-map.bemht
 Block i-leaflet
 =============
 
-Of course the map doesn't work without the [LeafLet.js](//github.com/Leaflet/Leaflet) library.  Let's create the library's block with it's corresponding technologies:
+Of course the map doesn't work without the [Leaflet.js](//github.com/Leaflet/Leaflet) library.  Let's create the library's block with it's corresponding technologies:
 
     $ ./node_modules/bem/bin/bem create block i-leaflet -l desktop.blocks -T js -T css -T ie.css
 
-It's not the best idea to rewrite someone else's library, so let's just copy the content of [dist-files](https://github.com/CloudMade/Leaflet/tree/master/dist) to the corresponding files of our block.  And, we will place the pictures into the directory: `i-leaflet/images`.
+It's not the best idea to rewrite someone else's library, so let's just copy the content of [dist-files](https://github.com/Leaflet/Leaflet/tree/master/dist) to the corresponding files of our block.  And, we will place the pictures into the directory: `i-leaflet/images`.
 
 Dependencies
 =============
@@ -233,7 +234,7 @@ Currently, we have the following chain of dependencies linking the blocks:
 
 ![Dependencies](__images/article__images.deps.jpeg)
 
-The dependencies are described with help of files `deps.js`.  Each block should contain everything it needs to do it's job.
+The dependencies are described with help of `deps.js`.  Each block should contain everything it needs to do it's job.
 
 We have already a file of dependencies for `b-page`. Let's make similar files for the other blocks:
 
