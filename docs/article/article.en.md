@@ -8,7 +8,7 @@ I want to have a map, and when I click at the building on it I want a balloon to
 
 Programmer:
 * Make HTML page;
-* Use library [LeafLet](https://github.com/CloudMade/Leaflet);
+* Use library [Leaflet](https://github.com/Leaflet/Leaflet);
 * Write reusable plugin for displaying the company's info-card;
 * Referring to the world "reusable" try to make it using BEM methodology;
 
