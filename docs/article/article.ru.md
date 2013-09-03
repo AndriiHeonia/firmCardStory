@@ -299,27 +299,5 @@
 
 Приложение готово к работе. Теперь при клике в каждое здание мы получим краткую информацию о нем.
 
-<!--(Begin) Article author block-->
-<div class="article-author">
-    <div class="article-author__photo">
-        <img class="article-author__pictures" src="http://img-fotki.yandex.ru/get/6701/51437929.0/0_bfebe_dc260bee_S.jpg" alt="Фотография Андрея Геоня">
-    </div>
-    <div class="article-author__info">
-        <div class="article-author__row">
-             <span class="article-author__name">Андрей Геоня,
-        </div>
-        <div class="article-author__row">
-            Руководитель группы разработки, компания "2GIS"
-        </div>
-        <div class="article-author__row">
-             <a class="article-author__social-icon b-link" target="_blank" href="http://twitter.com/AndreyGeonya">twitter.com/AndreyGeonya</a>
-        </div>
-        <div class="article-author__row">
-             <a class="article-author__social-icon b-link" target="_blank" href="http://github.com/AndreyGeonya">github.com/AndreyGeonya</a>
-        </div>
-    </div>
-</div>
-<!--(End) Article author block-->
-
 Код приложения доступен по адресу:
 [https://github.com/AndreyGeonya/firmCardStory](https://github.com/AndreyGeonya/firmCardStory)
