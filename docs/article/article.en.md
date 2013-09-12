@@ -4,7 +4,7 @@ Intro
 =============
 
 Manager:
-I want to have a map, and when I click at the building on it I want a balloon to emerge with information about organization inside this building. 
+I want to have a map, and when I click at the building on it I want a balloon to emerge with information about organization inside this building.
 
 Programmer:
 * Make HTML page;
@@ -33,7 +33,7 @@ Complete the project's `Build Process`:
     $ ./node_modules/bem/bin/bem make
 
 Now we can browse to: [desktop.bundles/index/index.html](http://localhost:8080/desktop.bundles/index/index.html) and the page that was built:
-![The build's result ](__images/article__images.build1.jpeg)
+![The build's result ](http://img-fotki.yandex.ru/get/6705/221798411.0/0_b9e18_bcebeab1_XL.jpg)
 
 It's very convenient to use [bem server](http://ru.bem.info/tools/bem/commands/) during the development phase of a project.  Bem server will perform the necessary parts of the build process for each browser request received.  To run the bem server you need to execute it from it's path located within the project folder:
 
@@ -96,7 +96,7 @@ Then paste the following code in the file `desktop.blocks/i-firmcard/i-firmcard.
         }
     });
 
-We use the Javascript library `i-bem.js` for the company card declaration. 
+We use the Javascript library `i-bem.js` for the company card declaration.
 **Russian Only:** for more details see Vladimir Varankin's presentation "[ Why have we written a js-framework?](http://video.yandex.ua/users/ya-events/view/880/#hq)".
 
 In a real-world application the 'Company Card' would have more functionality.  For example it could have a more sophisticated layout, calculate and display how many working hours are left for the current day, show expanded details based on mouse clicks, etc.
@@ -232,7 +232,7 @@ Dependencies
 
 Currently, we have the following chain of dependencies linking the blocks:
 
-![Dependencies](__images/article__images.deps.jpeg)
+![Dependencies](http://img-fotki.yandex.ru/get/5000/221798411.0/0_b9e16_fc510a98_L.jpg)
 
 The dependencies are described with help of `deps.js`.  Each block should contain everything it needs to do it's job.
 
@@ -301,7 +301,7 @@ Begin the project's `Build Process` (AKA: Make Process):
 
 Open `http://localhost:8080/desktop.bundles/index/index.html` in a browser, to see the result of our application's work:
 
-![The result of build](__images/article__images.build2.png)
+![The result of build](http://img-fotki.yandex.ru/get/9557/221798411.0/0_b9e17_ec9d4b59_XXL.png)
 
 The application is ready to go. Now after every click on any building on the map, we get some brief information about the building (The `Company Card`).
 
