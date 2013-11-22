@@ -1,0 +1,13 @@
+{
+    "title": "БЭМ-приложение на Leaflet и API 2GIS",
+    "createDate": "23-11-2012",
+    "editDate": "11-07-2013",
+    "summary": "Пример реализации несложного картографического сервиса по БЭМ-методологии.",
+    "thumbnail": "",
+    "authors": ["geonya-andrey"],
+    "tags": ["BEM","API"],
+    "categories": [],
+    "translators": [],
+    "url": "/docs/article/",
+    "type": "articles"
+} 

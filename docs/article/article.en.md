@@ -333,26 +333,4 @@ our application's work:
 The application is ready to go. Now after every click on any building on the map, we get some 
 brief information about the building (The `Company Card`).
 
-<!--(Begin) Article author block-->
-<div class="article-author">
-    <div class="article-author__photo">
-        <img class="article-author__pictures" src="http://img-fotki.yandex.ru/get/6701/51437929.0/0_bfebe_dc260bee_S.jpg" alt="Andrey Geonya">
-    </div>
-    <div class="article-author__info">
-        <div class="article-author__row">
-             <span class="article-author__name">Andrey Geonya,
-        </div>
-        <div class="article-author__row">
-          "2GIS" DevGroup - Team Leader
-        </div>
-        <div class="article-author__row">
-             <a class="article-author__social-icon b-link" target="_blank" href="http://twitter.com/AndreyGeonya">twitter.com/AndreyGeonya</a>
-        </div>
-        <div class="article-author__row">
-             <a class="article-author__social-icon b-link" target="_blank" href="http://github.com/AndreyGeonya">github.com/AndreyGeonya</a>
-        </div>
-    </div>
-</div>
-<!--(End) Article author block-->
-
 Fork [this](https://github.com/AndreyGeonya/firmCardStory) project on GitHub.
