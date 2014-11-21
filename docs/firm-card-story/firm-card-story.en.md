@@ -1,4 +1,4 @@
-Today we will take a look at the example of a simple map service built using 
+Today we will take a look at the example of a simple map service built using
 the [BEM methodology](http://bem.info/).
 
 Intro
@@ -35,13 +35,13 @@ Complete the project's `Build Process`:
 
     $ ./node_modules/bem/bin/bem make
 
-Now we can browse to: [desktop.bundles/index/index.html](http://localhost:8080/desktop.bundles/index/index.html) 
+Now we can browse to: [desktop.bundles/index/index.html](http://localhost:8080/desktop.bundles/index/index.html)
 and see the page that was built:
-![The build's result ](http://img-fotki.yandex.ru/get/6705/221798411.0/0_b9e18_bcebeab1_XL.jpg)
+![The build's result ](https://img-fotki.yandex.ru/get/15594/158800653.1/0_112012_5a079b05_orig)
 
-It's very convenient to use [bem server](http://ru.bem.info/tools/bem/commands/) during 
-the development phase of a project.  `bem server` will perform the necessary parts of 
-the build process for each browser request received.  To run the `bem server` you need 
+It's very convenient to use [bem server](http://ru.bem.info/tools/bem/commands/) during
+the development phase of a project.  `bem server` will perform the necessary parts of
+the build process for each browser request received.  To run the `bem server` you need
 to execute it from it's path located within the project folder:
 
     $ ./node_modules/bem/bin/bem server
@@ -51,7 +51,7 @@ Then we can browse to the address: http://localhost:8080/desktop.bundles/index.
 The Page Template
 =============
 
-Let's change the page structure by filling out the file `desktop.bundles/index/index.bemjson.js` 
+Let's change the page structure by filling out the file `desktop.bundles/index/index.bemjson.js`
 with the following content:
 
     ({
@@ -69,17 +69,17 @@ with the following content:
     })
 
 In this file we declared that:
-* The block [b-page](https://github.com/bem/bem-bl/tree/master/blocks-desktop/b-page) 
+* The block [b-page](https://github.com/bem/bem-bl/tree/master/blocks-desktop/b-page)
 of library [bem-bl](http://bem.github.com/bem-bl/index.ru.html) is being used for the page build.
 * The title is "Map of Novosibirsk".
 * Define which css and js files will be linked to the page.
 * Define the page content as a `b-map` block.
 
-Since the file `_index.ie.css` is only used by IE, we set the `ie` property to 'true'. You can 
-learn more about this property from the code: [bemhtml-template](https://github.com/bem/bem-bl/blob/master/blocks-desktop/b-page/b-page.bemhtml) 
+Since the file `_index.ie.css` is only used by IE, we set the `ie` property to 'true'. You can
+learn more about this property from the code: [bemhtml-template](https://github.com/bem/bem-bl/blob/master/blocks-desktop/b-page/b-page.bemhtml)
 for the `b-page` block.
 
-**Russian Only:** More information about the `bemhtml templating` engine can be found in 
+**Russian Only:** More information about the `bemhtml templating` engine can be found in
 [the documentation](http://bem.github.com/bem-bl/pages/bemhtml-syntax/bemhtml-syntax.ru.html).
 
 `i-firmcard` Block
@@ -109,22 +109,22 @@ Then paste the following code in the file `desktop.blocks/i-firmcard/i-firmcard.
     });
 
 We use the `i-bem.js` JavaScript library for the company card declaration.
-**Russian Only:** for more details see Vladimir Varankin's presentation 
+**Russian Only:** for more details see Vladimir Varankin's presentation
 "[ Why we wrote yet another JS framework?](http://video.yandex.ua/users/ya-events/view/880/#hq)".
 
-In a real-world application the "Company Card" would have more functionality.  
-For example it could have a more sophisticated layout, calculate and display 
+In a real-world application the "Company Card" would have more functionality.
+For example it could have a more sophisticated layout, calculate and display
 working hours left until the end of the day, show expanded details based on mouse clicks, etc.
 
-In this case, from a simple helper block, that returns only some simply-formatted text, 
-the idea can grow into an independent block with numerous elements and modifiers which are implemented 
-in different technologies (such as: css, js, bemhtml). This block receives a DOM-element 
+In this case, from a simple helper block, that returns only some simply-formatted text,
+the idea can grow into an independent block with numerous elements and modifiers which are implemented
+in different technologies (such as: css, js, bemhtml). This block receives a DOM-element
 and some raw data in JSON format, and then expands into this DOM-element and begins to function.
 
-`i-geoclicker` Block 
+`i-geoclicker` Block
 =============
 
-Besides the company card block itself we will need a plugin for Leaflet. The plugin will capture click 
+Besides the company card block itself we will need a plugin for Leaflet. The plugin will capture click
 on the map and show the company card in a balloon.
 
 Let's create it:
@@ -199,7 +199,7 @@ Place the following content into the block-file which is located here: `desktop.
     });
 
 As we can see, the block is quite simple, and consists of only 3 methods:
-* addTo is a handler for adding the map-plugin [Leaflet.js](//github.com/Leaflet/Leaflet), 
+* addTo is a handler for adding the map-plugin [Leaflet.js](//github.com/Leaflet/Leaflet),
 it will mange adding the click events to the map objects;
 * getGeoObject is a method for receiving data from the 2GIS geocoder;
 * showPopup is a method that shows a balloon with the company card.
@@ -207,8 +207,8 @@ it will mange adding the click events to the map objects;
 'b-map' Block
 =============
 
-For the map to show-up on the page, it first has to be initiated. The `b-map` block is 
-responsible for initializing the map with our plugin that we wrote above, let's create 
+For the map to show-up on the page, it first has to be initiated. The `b-map` block is
+responsible for initializing the map with our plugin that we wrote above, let's create
 this block in three files:
 
     $ ./node_modules/bem/bin/bem create block b-map -l desktop.blocks -T js -T css -T bemhtml
@@ -243,13 +243,13 @@ Lastly, paste the following code into the file `desktop.blocks/b-map/b-map.bemht
 `i-leaflet` Block
 =============
 
-Of course the map doesn't work without the [Leaflet.js](//github.com/Leaflet/Leaflet) library.  
+Of course the map doesn't work without the [Leaflet.js](//github.com/Leaflet/Leaflet) library.
 Let's create the library's block with its corresponding technologies:
 
     $ ./node_modules/bem/bin/bem create block i-leaflet -l desktop.blocks -T js -T css -T ie.css
 
-It's not the best idea to rewrite someone else's library, so let's just copy the content of 
-[dist-files](https://github.com/CloudMade/Leaflet/tree/master/dist) to the corresponding files of our block.  
+It's not the best idea to rewrite someone else's library, so let's just copy the content of
+[dist-files](https://github.com/CloudMade/Leaflet/tree/master/dist) to the corresponding files of our block.
 And, we will place the images into the directory: `i-leaflet/images`.
 
 Dependencies
@@ -257,9 +257,9 @@ Dependencies
 
 Currently, we have the following chain of dependencies linking the blocks:
 
-![Dependencies](http://img-fotki.yandex.ru/get/5000/221798411.0/0_b9e16_fc510a98_L.jpg)
+![Dependencies](https://img-fotki.yandex.ru/get/15482/158800653.1/0_112010_fa4d7691_orig)
 
-The dependencies are described with the help of `deps.js`.  
+The dependencies are described with the help of `deps.js`.
 Each block should contain everything it needs to do its job.
 
 We already have a dependency file for `b-page`. Let's make similar files for the other blocks:
@@ -325,12 +325,12 @@ Begin the project's `Build Process` (AKA: Make Process):
 
     $ ./node_modules/bem/bin/bem make
 
-Open `http://localhost:8080/desktop.bundles/index/index.html` in a browser, to see the result of 
+Open `http://localhost:8080/desktop.bundles/index/index.html` in a browser, to see the result of
 our application's work:
 
-![The result of build](http://img-fotki.yandex.ru/get/9557/221798411.0/0_b9e17_ec9d4b59_XXL.png)
+![The result of build](https://img-fotki.yandex.ru/get/15577/158800653.1/0_112011_7eecf8c8_orig)
 
-The application is ready to go. Now after every click on any building on the map, we get some 
+The application is ready to go. Now after every click on any building on the map, we get some
 brief information about the building (The `Company Card`).
 
 Fork [this](https://github.com/AndreyGeonya/firmCardStory) project on GitHub.
